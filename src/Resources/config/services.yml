@@ -1,0 +1,79 @@
+services:
+  # Decorate nelmio property accessor so it uses reflection
+  aligent.fixtures.reflection_property_accessor:
+    class: Nelmio\Alice\PropertyAccess\ReflectionPropertyAccessor
+    public: false
+    decorates: nelmio_alice.property_accessor
+    decoration_priority: -10
+    arguments:
+      - '@aligent.fixtures.reflection_property_accessor.inner'
+
+  # Override Persister with Oro Testframework persister
+  fidry_alice_data_fixtures.persistence.persister.doctrine.object_manager_persister:
+    class: Oro\Bundle\TestFrameworkBundle\Test\DataFixtures\Persister\ObjectManagerPersister
+    lazy: true
+    arguments:
+      - '@doctrine.orm.entity_manager'
+
+  Aligent\FixturesBundle\Initializer\ReferenceInitializer:
+    public: true
+    arguments:
+      - !tagged_iterator demo_fixtures.initializer
+
+  Aligent\FixturesBundle\Initializer\BusinessUnitInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\CustomerUserRoleInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\InventoryStatusInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\OrganizationInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\DefaultPriceListInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\ProductFamilyInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\ProductUnitInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\TaxCodeInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\AdminUserInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\SegmentTypeInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\WebsiteInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\CustomerGroupInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\WarehouseInitializer:
+    tags:
+      - { name: demo_fixtures.initializer }
+
+  Aligent\FixturesBundle\Initializer\RootCategoryInitializer:
+    arguments:
+      - '@oro_catalog.provider.master_catalog_root'
+    tags:
+      - { name: demo_fixtures.initializer }

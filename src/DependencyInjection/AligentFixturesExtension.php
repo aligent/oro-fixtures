@@ -1,0 +1,26 @@
+<?php
+/**
+ * @category  Aligent
+ * @package
+ * @author    Adam Hall <adam.hall@aligent.com.au>
+ * @copyright 2022 Aligent Consulting.
+ * @license
+ * @link      http://www.aligent.com.au/
+ */
+
+namespace Aligent\FixturesBundle\DependencyInjection;
+
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+
+class AligentFixturesExtension extends Extension
+{
+    public function load(array $configs, ContainerBuilder $container): void
+    {
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        //@todo: check if dev mode
+        $loader->load('services.yml');
+    }
+}

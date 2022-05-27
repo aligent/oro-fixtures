@@ -1,0 +1,2 @@
+bundles:
+  - { name: Aligent\FixturesBundle\AligentFixturesBundle, priority: 250 }

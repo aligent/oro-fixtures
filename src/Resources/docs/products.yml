@@ -1,0 +1,34 @@
+Oro\Bundle\ProductBundle\Entity\ProductName:
+    product_A_1_name:
+        string: 'Product A 1'
+
+Oro\Bundle\ProductBundle\Entity\ProductUnitPrecision:
+    unit_precisionA1:
+        unit: '@unit_each'
+        precision: '1'
+
+Oro\Bundle\ProductBundle\Entity\Product:
+    product_A_1:
+        type: 'simple'
+        sku: 'PROD_A_1'
+        organization: '@organization'
+        attributeFamily: '@defaultProductFamily'
+        primaryUnitPrecision: '@unit_precisionA1'
+        __calls:
+            - addName: ['@product_A_1_name']
+        status: 'enabled'
+        inventoryStatus: '@enumInventoryStatuses'
+
+Oro\Bundle\PricingBundle\Entity\ProductPrice:
+    price_A_1:
+        product: '@product_A_1'
+        priceList: '@defaultPriceList'
+        currency: 'AUD'
+        quantity: 1
+        unit: '@unit_each'
+        value: 12
+
+Oro\Bundle\PricingBundle\Entity\PriceListToProduct:
+    priceRelation_A_1:
+        product: '@product_A_1'
+        priceList: '@defaultPriceList'
