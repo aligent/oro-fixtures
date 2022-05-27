@@ -14,7 +14,7 @@ class ReferenceInitializer implements ReferenceInitializerInterface
     protected iterable $initializers = [];
 
     /**
-     * @var Collection<object>
+     * @var Collection<string, mixed>
      */
     protected Collection $references;
 
@@ -42,6 +42,10 @@ class ReferenceInitializer implements ReferenceInitializerInterface
         }
     }
 
+    /**
+     * @param ObjectManager $manager
+     * @return Collection<string, mixed>
+     */
     public function getReferences(ObjectManager $manager): Collection
     {
         if ($this->references->isEmpty()) {

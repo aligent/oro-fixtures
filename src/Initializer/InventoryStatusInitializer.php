@@ -13,7 +13,7 @@ class InventoryStatusInitializer implements ReferenceInitializerInterface
     public function init(ObjectManager $manager, Collection $referenceRepository): void
     {
         $entityName = ExtendHelper::buildEnumValueClassName('prod_inventory_status');
-        /** @var EnumValueRepository $repo */
+        /** @var EnumValueRepository $repo - @phpstan-ignore-next-line */
         $repo = $manager->getRepository($entityName);
 
         /** @var AbstractEnumValue $inventoryStatus */

@@ -39,5 +39,4 @@ class WebsiteInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

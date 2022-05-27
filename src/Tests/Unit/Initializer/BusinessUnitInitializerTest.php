@@ -40,5 +40,4 @@ class BusinessUnitInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

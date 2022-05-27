@@ -39,5 +39,4 @@ class TaxCodeInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

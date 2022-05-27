@@ -39,5 +39,4 @@ class SegmentTypeInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

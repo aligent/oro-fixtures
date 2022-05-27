@@ -39,5 +39,4 @@ class ProductFamilyInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

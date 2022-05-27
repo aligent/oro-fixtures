@@ -17,10 +17,19 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class AligentFixturesExtension extends Extension
 {
+    /**
+     * @param array<mixed> $configs
+     * @param ContainerBuilder $container
+     * @return void
+     * @throws \Exception
+     */
     public function load(array $configs, ContainerBuilder $container): void
     {
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        //@todo: check if dev mode
-        $loader->load('services.yml');
+
+        // Ensure this bundle is only ever loaded in development mode
+        if ($container->getParameter('kernel.environment') == 'dev') {
+            $loader->load('services.yml');
+        }
     }
 }

@@ -68,5 +68,4 @@ class OrganizationInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

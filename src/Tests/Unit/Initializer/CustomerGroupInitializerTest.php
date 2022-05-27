@@ -40,5 +40,4 @@ class CustomerGroupInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

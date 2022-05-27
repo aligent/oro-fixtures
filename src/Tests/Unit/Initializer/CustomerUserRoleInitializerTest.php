@@ -39,5 +39,4 @@ class CustomerUserRoleInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }

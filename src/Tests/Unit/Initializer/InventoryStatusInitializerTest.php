@@ -39,5 +39,4 @@ class InventoryStatusInitializerTest extends TestCase
             $collection->toArray()
         );
     }
-
 }
