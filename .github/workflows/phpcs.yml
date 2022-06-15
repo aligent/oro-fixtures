@@ -12,7 +12,7 @@ jobs:
         php: [8.0]
         stability: [prefer-lowest, prefer-stable]
 
-    name: PHP-${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }} - PHPStan
+    name: PHP-${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }} - PHPCS
 
     steps:
       - name: Checkout code
@@ -40,5 +40,5 @@ jobs:
       - name: Install dependencies
         run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
-      - name: Execute PHPStan
+      - name: Execute PHPCS
         run: bin/phpcs
