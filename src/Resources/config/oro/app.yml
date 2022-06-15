@@ -1,0 +1,4 @@
+fidry_alice_data_fixtures:
+  default_purge_mode: no_purge
+  db_drivers:
+    doctrine_orm: ~
