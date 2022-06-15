@@ -111,9 +111,9 @@ Adding and Running Fixtures
     }
 
     ```
-1. To execute the fixtures run, where `AcmeBaseBundle` is a comma delimited list of bundles with fixtures you want to execute.
+1. To execute the fixtures run:
     ```bash
-        bin/console oro:migration:data:load --env=dev --fixtures-type=demo --bundles=AcmeBaseBundle
+        bin/console oro:migration:data:load --env=dev --fixtures-type=demo --bundles=AcmeBaseBundle --bundles=AcmeAnotherBundle
     ```
 
 
