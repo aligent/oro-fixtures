@@ -1,5 +1,5 @@
-### 4.2.0 Release 
+### 4.2.1 Release 
 
-- Initial Release of bundle
-- Compatible with Oro >= 4.2
+- Rename TaxCodeInitializer to CustomerTaxCodeInitializer and update reference identifier 
+- Fix issue where second fixture fails due to references being removed from entity manager on flush
 

@@ -33,22 +33,22 @@ Intializers provide a way for Alice fixtures to reference entities that already 
 
 This bundle comes with the below initializers:
 
-|Initializer|Description|Example|
-|---|---|---|
-|AdminUserInitializer|First user with `ROLE_ADMINISTRATOR`|`@admin_user`|
-|CustomerUserRoleInitializer|All customer user roles|`@buyer`, `@admin`|
-|ProductUnitInitializer|All product unit codes prefixed with `unit`|`@unit_each`|
-|RootCategoryInitializer|The master catalogs root category|`@root_category`|
-|WarehouseInitializer|The snake case version of the name of each warehouse (Enterprise only) prefixed with `warehouse`|`Some Warehouse` becomes `@warehouse_some_warehouse`|
-|BusinessUnitInitializer|All of the existing business units suffixed with `_business_unit`| `North Office` becomes `@north_office_business_unit`|
-|DefaultPriceListInitializer|The default price list|`@default_price_list`|
-|OrganizationInitializer|If more than one organization exists the normalized name of of the organization prefixed by `org_`. If only one exists it is named `default_organization` |`@default_organization` or `Our Business` becomes `@org_our_business`|
-|SegmentTypeInitializer|The available segment types|`@dynamic_segment_type` or `static_segment_type`|
-|WebsiteInitializer|All website names prefixed by `website_`|`Some Store` becomes `@website_some_store`|
-|CustomerGroupInitializer|All customer group names prefixed with `group_` |`Registered Buyers` becomes `@group_registered_buyers`|
-|InventoryStatusInitializer|All inventory status ids prefixed by `inventory_status_`|`@inventory_status_in_stock` or `@inventory_status_out_of_stock`|
-|ProductFamilyInitializer|All Attribute family names prefixed with `product_family_`|`Clothing Attributes` becomes `@product_family_clothing_attributes`|
-|TaxCodeInitializer|The tax code lowercased and prefixed with `tax_code_`|`GST_FREE` becomes `@tax_code_gst_free`|
+|Initializer| Description                                                                                                                                               | Example                                                               |
+|---|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
+|AdminUserInitializer| First user with `ROLE_ADMINISTRATOR`                                                                                                                      | `@admin_user`                                                         |
+|CustomerUserRoleInitializer| All customer user roles                                                                                                                                   | `@buyer`, `@admin`                                                    |
+|ProductUnitInitializer| All product unit codes prefixed with `unit`                                                                                                               | `@unit_each`                                                          |
+|RootCategoryInitializer| The master catalogs root category                                                                                                                         | `@root_category`                                                      |
+|WarehouseInitializer| The snake case version of the name of each warehouse (Enterprise only) prefixed with `warehouse`                                                          | `Some Warehouse` becomes `@warehouse_some_warehouse`                  |
+|BusinessUnitInitializer| All of the existing business units suffixed with `_business_unit`                                                                                         | `North Office` becomes `@north_office_business_unit`                  |
+|DefaultPriceListInitializer| The default price list                                                                                                                                    | `@default_price_list`                                                 |
+|OrganizationInitializer| If more than one organization exists the normalized name of of the organization prefixed by `org_`. If only one exists it is named `default_organization` | `@default_organization` or `Our Business` becomes `@org_our_business` |
+|SegmentTypeInitializer| The available segment types                                                                                                                               | `@dynamic_segment_type` or `static_segment_type`                      |
+|WebsiteInitializer| All website names prefixed by `website_`                                                                                                                  | `Some Store` becomes `@website_some_store`                            |
+|CustomerGroupInitializer| All customer group names prefixed with `group_`                                                                                                           | `Registered Buyers` becomes `@group_registered_buyers`                |
+|InventoryStatusInitializer| All inventory status ids prefixed by `inventory_status_`                                                                                                  | `@inventory_status_in_stock` or `@inventory_status_out_of_stock`      |
+|ProductFamilyInitializer| All Attribute family names prefixed with `product_family_`                                                                                                | `Clothing Attributes` becomes `@product_family_clothing_attributes`   |
+|CustomerTaxCodeInitializer| The customer tax code lowercased and prefixed with `customer_tax_code_`                                                                                   | `GST_FREE` becomes `@customer_tax_code_gst_free`                      |
 
 Adding and Running Fixtures
 -----------

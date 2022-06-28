@@ -14,17 +14,11 @@ class ReferenceInitializer implements ReferenceInitializerInterface
     protected iterable $initializers = [];
 
     /**
-     * @var Collection<string, mixed>
-     */
-    protected Collection $references;
-
-    /**
      * @param iterable<ReferenceInitializerInterface> $initializers
      */
     public function __construct(iterable $initializers)
     {
         $this->initializers = $initializers;
-        $this->references = new ArrayCollection();
     }
 
     /**
@@ -40,18 +34,5 @@ class ReferenceInitializer implements ReferenceInitializerInterface
         foreach ($this->getInitializers() as $initializer) {
             $initializer->init($manager, $referenceRepository);
         }
-    }
-
-    /**
-     * @param ObjectManager $manager
-     * @return Collection<string, mixed>
-     */
-    public function getReferences(ObjectManager $manager): Collection
-    {
-        if ($this->references->isEmpty()) {
-            $this->init($manager, $this->references);
-        }
-
-        return $this->references;
     }
 }

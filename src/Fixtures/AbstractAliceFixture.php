@@ -3,6 +3,7 @@
 namespace Aligent\FixturesBundle\Fixtures;
 
 use Aligent\FixturesBundle\Initializer\ReferenceInitializer;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Persistence\ObjectManager;
 use Fidry\AliceDataFixtures\Loader\PurgerLoader;
@@ -49,8 +50,9 @@ abstract class AbstractAliceFixture extends AbstractFixture implements Container
 
         /** @var ReferenceInitializer $initializer */
         $initializer = $this->container->get(ReferenceInitializer::class);
-        $references = $initializer->getReferences($manager)->toArray();
-        $loader->load($files, [], $references);
+        $references = new ArrayCollection();
+        $initializer->init($manager, $references);
+        $loader->load($files, [], $references->toArray());
     }
 
     /**

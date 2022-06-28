@@ -48,7 +48,7 @@ services:
     tags:
       - { name: demo_fixtures.initializer }
 
-  Aligent\FixturesBundle\Initializer\TaxCodeInitializer:
+  Aligent\FixturesBundle\Initializer\CustomerTaxCodeInitializer:
     tags:
       - { name: demo_fixtures.initializer }
 
